@@ -20,11 +20,13 @@ package org.fosdem.pojo;
  */
 
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
 import org.fosdem.schedules.Main;
+
 
 import android.util.Log;
 

@@ -1,5 +1,6 @@
 package org.fosdem.db;
 
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,7 @@ import org.fosdem.pojo.Event;
 import org.fosdem.pojo.Person;
 import org.fosdem.pojo.Room;
 import org.fosdem.pojo.Schedule;
+
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

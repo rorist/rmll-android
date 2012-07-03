@@ -1,5 +1,6 @@
 package org.fosdem.schedules;
 
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Enumeration;
@@ -11,6 +12,7 @@ import org.fosdem.parsers.ScheduleParser;
 import org.fosdem.pojo.Schedule;
 import org.fosdem.util.FileUtil;
 import org.fosdem.util.StringUtil;
+
 
 import android.content.Context;
 import android.os.Handler;

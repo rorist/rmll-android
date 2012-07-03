@@ -1,5 +1,6 @@
 package org.fosdem.schedules;
 
+
 import java.util.Date;
 
 import org.fosdem.R;
@@ -156,7 +157,8 @@ public class Main extends Activity implements ParserEventListener,
 		}
 
 		if (count < 1) {
-			showDialog(DIALOG_UPDATE);
+//			showDialog(DIALOG_UPDATE);
+            doUpdate();
 		}
 
 		// FIXME on first startup
@@ -284,7 +286,8 @@ public class Main extends Activity implements ParserEventListener,
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		switch (item.getItemId()) {
 		case UPDATE_ID:
-			showDialog(DIALOG_UPDATE);
+//			showDialog(DIALOG_UPDATE);
+			doUpdate();
 			return true;
 		case ABOUT_ID:
 			showDialog(DIALOG_ABOUT);
@@ -415,4 +418,10 @@ public class Main extends Activity implements ParserEventListener,
 		Intent i = new Intent(this, Preferences.class);
 		startActivity(i);
 	}
+
+    private void doUpdate() {
+        final Thread t = new Thread(new BackgroundUpdater(handler, Main.this,
+                getApplicationContext(), true, false));
+        t.start();
+    }
 }

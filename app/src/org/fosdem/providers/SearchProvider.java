@@ -1,11 +1,13 @@
 package org.fosdem.providers;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.fosdem.db.DBAdapter;
 import org.fosdem.pojo.Event;
 import org.fosdem.pojo.Person;
+
 
 import android.app.SearchManager;
 import android.content.ContentProvider;

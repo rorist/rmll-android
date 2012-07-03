@@ -3,6 +3,7 @@
  */
 package org.fosdem.util;
 
+
 import java.util.ArrayList;
 
 import org.fosdem.R;
