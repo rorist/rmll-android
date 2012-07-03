@@ -52,7 +52,7 @@ public class Main extends Activity implements ParserEventListener,
 
 	public static final String PREFS = "org.fosdem";
 	public static final String XML_URL = "http://schedule2012.rmll.info/spip.php?page=rmll_progxml";
-	public static final String ROOM_IMG_URL_BASE = "http://fosdem.org/2010/map/room/";
+//	public static final String ROOM_IMG_URL_BASE = "http://fosdem.org/2010/map/room/";
 
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;

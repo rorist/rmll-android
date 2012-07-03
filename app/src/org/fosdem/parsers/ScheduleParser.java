@@ -20,6 +20,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import android.util.Log;
+
 //TODO eMich - persons and links need to be added to the parser.
 public class ScheduleParser extends BaseParser {
 
@@ -77,6 +79,7 @@ public class ScheduleParser extends BaseParser {
 
 	public Schedule parse() throws ParserException {
 		try {
+		    Log.e("TEST", "start parsing");
 			List<Day> days = new ArrayList<Day>();
 			Event event = null;
 			List<Event> events = null;

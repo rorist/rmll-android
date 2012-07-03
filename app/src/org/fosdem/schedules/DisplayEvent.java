@@ -125,24 +125,24 @@ public class DisplayEvent extends Activity {
 		tv.setText(value);
 	}
 
-	public void prefetchImageViewImageAndShowIt(final String filename) {
-		Thread t = new Thread() {
-			public void run() {
-				try {
-					roomImageDrawable = FileUtil.fetchCachedDrawable(filename);
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				Message msg = Message.obtain();
-				msg.what = MAPREADY;
-				handler.sendMessage(msg);
-			}
-		};
-		t.start();
+//	public void prefetchImageViewImageAndShowIt(final String filename) {
+//		Thread t = new Thread() {
+//			public void run() {
+//				try {
+//					roomImageDrawable = FileUtil.fetchCachedDrawable(filename);
+//				} catch (MalformedURLException e) {
+//					e.printStackTrace();
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
+//				Message msg = Message.obtain();
+//				msg.what = MAPREADY;
+//				handler.sendMessage(msg);
+//			}
+//		};
+//		t.start();
 
-	}
+//	}
 
 	/**
 	 * Loads the contents of the event with into the gui.
@@ -171,8 +171,8 @@ public class DisplayEvent extends Activity {
 
 		// setImageViewImage(R.id.room_image,
 		// StringUtil.roomNameToURL(event.getRoom()));
-		prefetchImageViewImageAndShowIt(StringUtil.roomNameToURL(event
-				.getRoom()));
+//		prefetchImageViewImageAndShowIt(StringUtil.roomNameToURL(event
+//				.getRoom()));
 	}
 
 	@Override

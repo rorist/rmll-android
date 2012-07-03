@@ -116,8 +116,8 @@ public class StringUtil {
 	 * @param name 
 	 * @return
 	 */
-	public static String roomNameToURL(String name) {
-		return Main.ROOM_IMG_URL_BASE+name.replace(".", "").toLowerCase();
-	}
+//	public static String roomNameToURL(String name) {
+//		return Main.ROOM_IMG_URL_BASE+name.replace(".", "").toLowerCase();
+//	}
 
 }

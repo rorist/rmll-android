@@ -30,7 +30,7 @@ public class BackgroundUpdater implements Runnable {
 	private final ParserEventListener parseEventListener;
 	private final Context context;
 	private final boolean doUpdateXml;
-	private final boolean doUpdateRooms;
+//	private final boolean doUpdateRooms;
 
 	/**
 	 * Constructor
@@ -47,7 +47,7 @@ public class BackgroundUpdater implements Runnable {
 		this.handler = handler;
 		this.parseEventListener = parseEventListener;
 		this.context = context;
-		this.doUpdateRooms = updateRooms;
+//		this.doUpdateRooms = updateRooms;
 		this.doUpdateXml = updateXml;
 	}
 
@@ -95,32 +95,32 @@ public class BackgroundUpdater implements Runnable {
 	/**
 	 * Prefetches the rooms images
 	 */
-	private void updateRooms() {
+    // private void updateRooms() {
+    //
+    // sendMessage(Main.ROOMIMGSTART);
+    //
+    // // get the list of the rooms
+    // final String[] rooms;
+    // final DBAdapter db = new DBAdapter(context);
+    // db.open();
+    // try {
+    // rooms = db.getRooms();
+    // } finally {
+    // db.close();
+    // }
 
-		sendMessage(Main.ROOMIMGSTART);
+    // Download the images in the background
+    // for (final String room : rooms) {
+    // // Log.d(LOG_TAG, "Downloading room image:" + room);
+    // try {
+    // FileUtil.fetchCached(StringUtil.roomNameToURL(room));
+    // } catch (MalformedURLException e) {
+    // } catch (IOException e) {
+    // }
+    // }
 
-		// get the list of the rooms
-		final String[] rooms;
-		final DBAdapter db = new DBAdapter(context);
-		db.open();
-		try {
-			rooms = db.getRooms();
-		} finally {
-			db.close();
-		}
-
-		// Download the images in the background
-		for (final String room : rooms) {
-			// Log.d(LOG_TAG, "Downloading room image:" + room);
-			try {
-				FileUtil.fetchCached(StringUtil.roomNameToURL(room));
-			} catch (MalformedURLException e) {
-			} catch (IOException e) {
-			}
-		}
-
-		sendMessage(Main.ROOMIMGDONE);
-	}
+    // sendMessage(Main.ROOMIMGDONE);
+    // }
 
 	public void run() {
 		synchronized (LOCK) {
@@ -128,8 +128,8 @@ public class BackgroundUpdater implements Runnable {
 				sendMessage(Main.LOAD_BG_START);
 				if (doUpdateXml)
 					updateXml();
-				if (doUpdateRooms)
-					updateRooms();
+                // if (doUpdateRooms)
+                // updateRooms();
 				sendMessage(Main.LOAD_BG_END); 
 			} catch (IOException e) {
 			} catch (ParserException e) {
