@@ -54,20 +54,43 @@ public class Track {
 	
 
 	public String getType() {
-		// FOSDEM specific parts
-		String[] mainTracks = {	"Keynotes", "Security", "Scalability",
-												"Monitoring", "Various", "Database", "Javascript" };
-		String[] sameAsTrack =  {"Lightning Talks", "Certification"};
-		//private final String[] devrooms; = else 
+		// RMLL 2012 specific parts
+        String[] mainTracks = { "Cultures et Arts Libres", "Communautés",
+                "Politique, droit et administrations publiques",
+                "Média, radio, télévision et graphisme professionnel",
+                "Entreprises et Logiciel Libre", };
+        String[] scienceTrack = { "Enseignement de l'école à l'Université",
+                "Recherche et université", };
+        String[] healthTrack = {
+                "Imagerie et visualisation de données médicales",
+                "Accessibilité, autonomie et gestion de la dépendance",
+                "Système d'informations hospitalier et télésanté", };
+        String[] techTrack = { "Administration Système",
+                "Développement logiciel",
+                "Systèmes Embarqués et Matériel Libre",
+                "Systèmes d'Exploitation", "Sécurité", "Internet" };
+        String[] sameAsTrack = { "Général", "Divers" };
 		
 		// Main Tracks
 		for (String s: mainTracks) {
 			if (0==name.compareTo(s)) return "Main Track";
 	    }
-		// 
-		for (String s: sameAsTrack) {
-			if (0==name.compareTo(s)) return name;
-	    }
+        // 
+        for (String s: sameAsTrack) {
+            if (0==name.compareTo(s)) return name;
+        }
+        // 
+        for (String s: scienceTrack) {
+            if (0==name.compareTo(s)) return "Sciences et formation";
+        }
+        // 
+        for (String s: healthTrack) {
+            if (0==name.compareTo(s)) return "Santé et Accessibilité";
+        }
+        // 
+        for (String s: techTrack) {
+            if (0==name.compareTo(s)) return "Technique";
+        }
 		// Rest are Devrooms
 		return "Developer Room";
 	}
