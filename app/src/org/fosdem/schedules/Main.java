@@ -56,7 +56,7 @@ public class Main extends Activity implements ParserEventListener,
 
 	public int counter = 0;
 	protected TextView tvProgress = null, tvDbVer = null;
-	protected Button btnDay1, btnDay2, btnSearch, btnFavorites;
+	protected Button btnDay1, btnDay2, btnDay3, btnDay4, btnDay5, btnDay6, btnSearch, btnFavorites;
 	protected Intent service;
 
 	private BroadcastReceiver favoritesChangedReceiver = new BroadcastReceiver() {
@@ -105,10 +105,19 @@ public class Main extends Activity implements ParserEventListener,
 		// Set up the UI
 		setContentView(R.layout.main);
 
-		btnDay1 = (Button) findViewById(R.id.btn_day_1);
-		btnDay1.setOnClickListener(this);
-		btnDay2 = (Button) findViewById(R.id.btn_day_2);
-		btnDay2.setOnClickListener(this);
+        btnDay1 = (Button) findViewById(R.id.btn_day_1);
+        btnDay1.setOnClickListener(this);
+        btnDay2 = (Button) findViewById(R.id.btn_day_2);
+        btnDay2.setOnClickListener(this);
+        btnDay3 = (Button) findViewById(R.id.btn_day_3);
+        btnDay3.setOnClickListener(this);
+        btnDay4 = (Button) findViewById(R.id.btn_day_4);
+        btnDay4.setOnClickListener(this);
+        btnDay5 = (Button) findViewById(R.id.btn_day_5);
+        btnDay5.setOnClickListener(this);
+        btnDay6 = (Button) findViewById(R.id.btn_day_6);
+        btnDay6.setOnClickListener(this);
+		
 		btnSearch = (Button) findViewById(R.id.btn_search);
 		btnSearch.setOnClickListener(this);
 		btnFavorites = (Button) findViewById(R.id.btn_favorites);
@@ -137,7 +146,11 @@ public class Main extends Activity implements ParserEventListener,
 			btnFavorites.setEnabled(dbAdapter.getBookmarkCount() > 0);
 			count = dbAdapter.getEventCount();
 			btnDay1.setEnabled(count > 0);
-			btnDay2.setEnabled(count > 0);
+            btnDay2.setEnabled(count > 0);
+            btnDay3.setEnabled(count > 0);
+            btnDay4.setEnabled(count > 0);
+            btnDay5.setEnabled(count > 0);
+            btnDay6.setEnabled(count > 0);
 		} finally {
 			dbAdapter.close();
 		}
@@ -239,9 +252,21 @@ public class Main extends Activity implements ParserEventListener,
 		case R.id.btn_day_1:
 			showTracksForDay(1);
 			break;
-		case R.id.btn_day_2:
-			showTracksForDay(2);
-			break;
+        case R.id.btn_day_2:
+            showTracksForDay(2);
+            break;
+        case R.id.btn_day_3:
+            showTracksForDay(3);
+            break;
+        case R.id.btn_day_4:
+            showTracksForDay(4);
+            break;
+        case R.id.btn_day_5:
+            showTracksForDay(5);
+            break;
+        case R.id.btn_day_6:
+            showTracksForDay(6);
+            break;
 		case R.id.btn_search:
 			onSearchRequested();
 			break;
@@ -308,6 +333,10 @@ public class Main extends Activity implements ParserEventListener,
 					long count = db.getEventCount();
 					btnDay1.setEnabled(count > 0);
 					btnDay2.setEnabled(count > 0);
+		            btnDay3.setEnabled(count > 0);
+		            btnDay4.setEnabled(count > 0);
+		            btnDay5.setEnabled(count > 0);
+		            btnDay6.setEnabled(count > 0);
 				} finally {
 					db.close();
 				}
