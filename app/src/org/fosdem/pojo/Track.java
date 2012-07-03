@@ -73,7 +73,7 @@ public class Track {
 		
 		// Main Tracks
 		for (String s: mainTracks) {
-			if (0==name.compareTo(s)) return "Main Track";
+			if (0==name.compareTo(s)) return "Principal";
 	    }
         // 
         for (String s: sameAsTrack) {
@@ -92,6 +92,6 @@ public class Track {
             if (0==name.compareTo(s)) return "Technique";
         }
 		// Rest are unknown
-		return "Unknown";
+		return "";
 	}
 }
