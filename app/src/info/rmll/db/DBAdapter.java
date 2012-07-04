@@ -208,11 +208,11 @@ public class DBAdapter extends ContentProvider {
 			db.execSQL("drop table if exists events");
 			db.execSQL("drop table if exists persons");
 			db.execSQL("drop table if exists person_event");
-			db.execSQL("drop table if exists favorites");
+//			db.execSQL("drop table if exists favorites");
 			db.execSQL(DB_CREATE_EVENTS);
 			db.execSQL(DB_CREATE_PERSONS);
 			db.execSQL(DB_CREATE_PERSON_EVENT);
-			db.execSQL(DB_CREATE_FAVORITES);
+//			db.execSQL(DB_CREATE_FAVORITES);
 		}
 	}
 
