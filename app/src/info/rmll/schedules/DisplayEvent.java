@@ -1,18 +1,14 @@
 package info.rmll.schedules;
 
 
+import info.rmll.R;
 import info.rmll.broadcast.FavoritesBroadcast;
 import info.rmll.db.DBAdapter;
 import info.rmll.pojo.Event;
-import info.rmll.util.FileUtil;
 import info.rmll.util.StringUtil;
 import info.rmll.views.FavoriteButton;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Calendar;
-
-import info.rmll.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,8 +18,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.ImageView;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 public class DisplayEvent extends Activity {
@@ -169,7 +164,10 @@ public class DisplayEvent extends Activity {
 		setTextViewText(R.id.event_speaker, StringUtil.personsToString(event
 				.getPersons()));
 //		setTextViewText(R.id.event_abstract, eventAbstract);
-		setTextViewText(R.id.event_description, eventDescription);
+//		setTextViewText(R.id.event_description, eventDescription);
+        ((WebView) findViewById(R.id.event_description)).loadData(
+                eventDescription, "text/html; charset=UTF-8", null);
+		findViewById(R.id.event_description).setBackgroundColor(0);
 
 		// setImageViewImage(R.id.room_image,
 		// StringUtil.roomNameToURL(event.getRoom()));

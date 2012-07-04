@@ -54,34 +54,14 @@
           android:layout_alignParentRight="true" />	
 
     </RelativeLayout>
+    
+    <WebView
+        android:id="@+id/event_description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:padding="10dip" />
 
-    <RelativeLayout 
-            android:id="@+id/BodyLayout" 
-            android:layout_width="fill_parent" 
-            android:layout_height="wrap_content" 
-            android:orientation="vertical" 
-            android:background="#ecfaff"
-        	>
-<!--         <TextView  -->
-<!--             android:text="event_abstract"  -->
-<!--             android:id="@+id/event_abstract"  -->
-<!--             android:layout_width="fill_parent"  -->
-<!--             android:layout_height="wrap_content"  -->
-<!--             android:textColor="#333"  -->
-<!--             android:padding="4dip" -->
-<!--             android:layout_margin="10dip" -->
-<!--             android:background="#d9f7ff" -->
-<!--         	/> -->
-        	
-        <TextView
-            android:id="@+id/event_description" 
-            android:layout_width="fill_parent" 
-            android:layout_height="fill_parent"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-            android:paddingBottom="10dip"
-        	/>
-        </RelativeLayout>
 <!--         <ImageView -->
 <!--             android:id="@+id/room_image" -->
 <!--             android:layout_width="fill_parent"  -->
