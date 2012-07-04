@@ -71,11 +71,11 @@ public class DisplayEvent extends Activity {
 		public void handleMessage(Message msg) {
 			if (msg == null)
 				return;
-			if (msg.what == MAPREADY) {
-				ImageView iv = (ImageView) findViewById(R.id.room_image);
-				iv.setImageDrawable(roomImageDrawable);
-				// tv.setText("Fetched "+counter+" events.");
-			}
+//			if (msg.what == MAPREADY) {
+//				ImageView iv = (ImageView) findViewById(R.id.room_image);
+//				iv.setImageDrawable(roomImageDrawable);
+//				// tv.setText("Fetched "+counter+" events.");
+//			}
 		}
 	};
 
@@ -153,10 +153,10 @@ public class DisplayEvent extends Activity {
 	 *            The event to show
 	 */
 	private void showEvent(Event event) {
-		String eventAbstract = StringUtil.niceify(event
-				.getAbstract_description());
-		if (eventAbstract.length() == 0)
-			eventAbstract = "No abstract available.";
+//		String eventAbstract = StringUtil.niceify(event
+//				.getAbstract_description());
+//		if (eventAbstract.length() == 0)
+//			eventAbstract = "No abstract available.";
 		String eventDescription = StringUtil.niceify(event.getDescription());
 		if (eventDescription.length() == 0)
 			eventDescription = "No lecture description avablable.";
@@ -168,7 +168,7 @@ public class DisplayEvent extends Activity {
 				.getStart(), event.getDuration()));
 		setTextViewText(R.id.event_speaker, StringUtil.personsToString(event
 				.getPersons()));
-		setTextViewText(R.id.event_abstract, eventAbstract);
+//		setTextViewText(R.id.event_abstract, eventAbstract);
 		setTextViewText(R.id.event_description, eventDescription);
 
 		// setImageViewImage(R.id.room_image,
