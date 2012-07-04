@@ -19,9 +19,7 @@
           android:id="@+id/event_title"
           android:layout_width="0px"
           android:layout_weight="1"
-          android:paddingLeft="8dp"
-          android:paddingTop="5dp"
-          android:paddingBottom="5dp" />
+          android:padding="10dp" />
 
         <info.rmll.views.FavoriteButton
           android:id="@+id/favoriteButton"
@@ -32,28 +30,41 @@
         
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
       android:layout_width="fill_parent" 
       android:paddingLeft="8dp"
       android:paddingRight="8dp">
 
         <TextView 
-          android:id="@+id/event_speaker" />
+          android:id="@+id/event_speaker"
+          android:layout_width="0dip"
+          android:layout_weight="1" />
 
         <TextView 
           android:id="@+id/event_track"
-          android:layout_alignParentRight="true" />
+          android:layout_width="0dip"
+          android:layout_weight="1"
+          android:gravity="right" />
+        
+    </LinearLayout>
+        
+    <LinearLayout
+      android:layout_width="fill_parent" 
+      android:paddingLeft="8dp"
+      android:paddingRight="8dp">
 
         <TextView 
           android:id="@+id/event_room" 
-          android:layout_below="@id/event_track" />
+          android:layout_width="0dip"
+          android:layout_weight="1"  />
         	
         <TextView 
           android:id="@+id/event_time"
-          android:layout_below="@id/event_track"
-          android:layout_alignParentRight="true" />	
+          android:layout_width="0dip"
+          android:layout_weight="1"
+          android:gravity="right" />	
 
-    </RelativeLayout>
+    </LinearLayout>
     
     <WebView
         android:id="@+id/event_description"
