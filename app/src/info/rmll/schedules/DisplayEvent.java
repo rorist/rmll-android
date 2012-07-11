@@ -165,8 +165,7 @@ public class DisplayEvent extends Activity {
 				.getPersons()));
 //		setTextViewText(R.id.event_abstract, eventAbstract);
 //		setTextViewText(R.id.event_description, eventDescription);
-        ((WebView) findViewById(R.id.event_description)).loadData(
-                eventDescription, "text/html; charset=UTF-8", null);
+        ((WebView) findViewById(R.id.event_description)).loadDataWithBaseURL(null, eventDescription, "text/html", "utf-8", null);
 		findViewById(R.id.event_description).setBackgroundColor(0);
 
 		// setImageViewImage(R.id.room_image,
